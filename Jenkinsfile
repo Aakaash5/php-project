@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage('git cloned'){
             steps{
-                git url:'https://github.com/Aakaash5/php-project/', branch: "master"
+                git url:'https://github.com/Aakaash5/php-project/blob/master/Jenkinsfile', branch: "master"
               
             }
         }
@@ -31,9 +31,9 @@ pipeline {
                     def dockerCmd = 'sudo docker run -itd --name My-first-containe2211 -p 8083:80 aakaash03/akshatnewimg6july:v1'
                     sshagent(['sshkeypair']) {
                         //chnage the private ip in below code
-                        // sh "docker run -itd --name My-first-containe2111 -p 8083:80 akshu20791/2febimg:v1"
-                         sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.19.162 ${dockerrm}"
-                         sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.19.162 ${dockerCmd}"
+                        // sh "docker run -itd --name My-first-containe2111 -p 8083:80 aakaash03/2febimg:v1"
+                         sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.86.80 ${dockerrm}"
+                         sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.86.80 ${dockerCmd}"
                     }
                 }
             }
